@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const expenses = [
   {
@@ -21,10 +22,15 @@ const expenses = [
     date: new Date(2021, 5, 12),
   },
 ];
+const addExpenseToArray = (NewExpenseData) => {
+  expenses.push(NewExpenseData);
+  console.log(expenses);
+};
 function App() {
   return (
     <div>
-      <h2 id="head">Let's get started!</h2>
+      <NewExpense addToArray={addExpenseToArray} />
+
       <Expenses expenses={expenses} />
     </div>
   );

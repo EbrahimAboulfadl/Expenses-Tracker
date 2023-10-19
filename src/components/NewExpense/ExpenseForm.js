@@ -41,14 +41,16 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const expenseData = {
+      id: Math.random(),
       title: enteredTitle,
       date: new Date(enteredDate),
       amount: enteredAmount,
     };
     props.onSaveForm(expenseData);
     setEnteredTitle("");
-    setEnteredDate("");
+    setEnteredDate(Date.now);
     setEnteredAmount("");
+    props.hideForm();
   };
 
   return (
@@ -85,6 +87,9 @@ const ExpenseForm = (props) => {
       </div>
       <div className="new-expense__actions">
         <button type="submit">Add Expense</button>
+        <button type='button' onClick={props.hideForm}>
+          Cancel
+        </button>
       </div>
     </form>
   );

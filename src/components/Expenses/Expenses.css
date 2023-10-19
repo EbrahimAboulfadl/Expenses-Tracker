@@ -5,3 +5,11 @@
     width: 50rem;
     max-width: 95%;
   }
+  #label__no-record{
+    color: white;
+    background-color: #363e77;
+    display: inline;
+    border-radius: 100px;
+    padding: 4px 15px;
+
+  }

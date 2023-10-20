@@ -44,7 +44,7 @@ const ExpenseForm = (props) => {
       id: Math.random(),
       title: enteredTitle,
       date: new Date(enteredDate),
-      amount: enteredAmount,
+      amount: +enteredAmount,
     };
     props.onSaveForm(expenseData);
     setEnteredTitle("");
@@ -87,7 +87,7 @@ const ExpenseForm = (props) => {
       </div>
       <div className="new-expense__actions">
         <button type="submit">Add Expense</button>
-        <button type='button' onClick={props.hideForm}>
+        <button type="button" onClick={props.hideForm}>
           Cancel
         </button>
       </div>
